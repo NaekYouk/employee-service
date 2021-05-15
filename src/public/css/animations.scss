@@ -1,0 +1,462 @@
+@import "layers";
+@import "colors";
+
+.highlight_navbar_link {
+    transition: 0.2s;
+    &_lightgray {
+        @extend .highlight_navbar_link;
+        &:hover,
+        &:focus {
+            background-color: $color-background-pressed;
+            outline: none;
+        }
+    }
+}
+
+.highlight_link {
+    transition: 0.3s;
+    cursor: pointer;
+    outline: none;
+
+    &_yellow {
+        @extend .highlight_link;
+        &:hover,
+        &:focus {
+            color: $color-yellow;
+        }
+    }
+
+    &_red {
+        @extend .highlight_link;
+        &:hover,
+        &:focus {
+            color: $color-red;
+        }
+    }
+}
+
+.highlight_pagination_item {
+    transition: 0.3s;
+    &_yellow {
+        @extend .highlight_pagination_item;
+        &:hover,
+        &:focus {
+            background-color: $color-yellow;
+            outline: none;
+        }
+    }
+}
+
+.header_logo_fade_in {
+    animation: header_logo_fade_in 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes header_logo_fade_in {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.flip_in_link {
+    animation: flip_in_link 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes flip_in_link {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade_in {
+    animation: fade_in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade_in{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade_in_top {
+    animation: fade_in_top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade_in_top {
+    0% {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade_in_bottom {
+    animation: fade_in_bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade_in_bottom {
+    0% {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.flip_in_image_left_top {
+    animation: flip_in_image_left_top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.flip_in_image_left_bottom {
+    animation: flip_in_image_left_bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes flip_in_image_left_top {
+    0% {
+        transform: rotateY(-80deg) translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateY(0) translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes flip_in_image_left_bottom {
+    0% {
+        transform: rotateY(-80deg) translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateY(0) translateY(0px);
+        opacity: 1;
+    }
+}
+
+.fade_in_text_left_top {
+    animation: fade_in_text_left_top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.fade_in_text_left_bottom {
+    animation: fade_in_text_left_bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade_in_text_left_top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade_in_text_left_bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade_in_modal {
+    animation: fade_in_modal 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade_in_modal{
+    0% {
+        background-color: rgba(0,0,0,.0);
+        z-index: $invisible_level;
+    }
+
+    100% {
+        background-color: rgba(0,0,0,.5);
+        z-index: $highest_level;
+    }
+}
+
+.fade_out_modal {
+    animation: fade_out_modal 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade_out_modal{
+    0% {
+        background-color: rgba(0,0,0,.5);
+        z-index: $highest_level;
+    }
+
+    100% {
+        background-color: rgba(0,0,0,.0);
+        z-index: $invisible_level;
+    }
+}
+
+.fade_in_modal_children {
+    animation: fade_in_modal_children 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade_in_modal_children{
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.fade_out_modal_children {
+    animation: fade_out_modal_children 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade_out_modal_children{
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.flip_in_icon_left_top {
+    animation: flip_in_icon_left_top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.flip_in_icon_left_bottom {
+    animation: flip_in_icon_left_bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes flip_in_icon_left_top {
+    0% {
+        transform: rotateY(-80deg) translateY(-40px);
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotateY(0) translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes flip_in_icon_left_bottom {
+    0% {
+        transform: rotateY(-80deg) translateY(40px);
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotateY(0) translateY(0px);
+        opacity: 1;
+    }
+}
+
+.fade-in-with_display {
+    animation: fade-in-with_display 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.fade-out-with_display {
+    animation: fade-out-with_display 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes fade-in-with_display {
+    0% {
+        display: block;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes fade-out-with_display {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+    75% {
+        opacity: 0;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+.nextSection {
+    &_enter {
+        transform: translateY(100%);
+        transition: 800ms;
+    }
+
+    &_enterActive {
+        transform: translateY(0%);
+        transition: 800ms;
+    }
+
+    &_exit {
+        transform: translateY(0%);
+        transition: 800ms;
+    }
+
+    &_exitActive {
+        transform: translateY(-100%);
+        transition: 800ms;
+    }
+}
+
+.previousSection {
+    &_enter {
+        transform: translateY(-100%);
+        transition: 800ms;
+    }
+
+    &_enterActive {
+        transform: translateY(0%);
+        transition: 800ms;
+    }
+
+    &_exit {
+        transform: translateY(0%);
+        transition: 800ms;
+    }
+
+    &_exitActive {
+        transform: translateY(100%);
+        transition: 800ms;
+    }
+}
+
+.nextPage {
+    &_enter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: 800ms;
+    }
+    &_enterActive {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(0%);
+        transition: 800ms;
+    }
+
+    &_exit {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(0%);
+        transition: 800ms;
+    }
+
+    &_exitActive {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: 800ms;
+    }
+}
+
+.previousPage {
+    &_enter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: 800ms;
+    }
+
+    &_enterActive {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(0%);
+        transition: 800ms;
+    }
+
+    &_exit {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(0%);
+        transition: 800ms;
+    }
+
+    &_exitActive {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: 800ms;
+    }
+}
+

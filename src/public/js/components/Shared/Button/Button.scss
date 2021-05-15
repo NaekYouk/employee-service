@@ -1,0 +1,179 @@
+@import "~Styles/colors";
+
+$border-radius: 2px;
+$transition-time: 0.3s;
+
+.button {
+  font-size: 15px;
+  text-align: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  outline: none;
+
+  &__default {
+    @extend .button;
+    border: 1px solid $color-yellow;
+    background-color: $color-yellow;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-width: 100px;
+    color: $color-black;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      background-color: $color-yellow;
+      color: $color-black;
+    }
+  }
+
+  &__solid {
+    @extend .button;
+    border: 1px solid $color-yellow;
+    background-color: $color-yellow;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-width: 100px;
+    color: $color-gray;
+    transition: $transition-time;
+    font-family: Raleway-Regular, sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+    border-radius: $border-radius;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-yellow-dark;
+      border-color: $color-yellow-dark;
+    }
+
+    &.disabled {
+      background-color: $color-background-gray;
+      border-color: $color-background-gray;
+      color: $color-lightGray;
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus {
+        background-color: $color-background-gray;
+        border-color: $color-background-gray;
+      }
+    }
+  }
+
+  &__secondaryButton {
+    @extend .button__solid;
+    background-color: $color-background-pressed;
+    border-color: $color-background-pressed;
+    color: $color-lightGray;
+    border-radius: $border-radius;
+
+    &:hover,
+    &:focus {
+      background-color: $color-background-gray;
+      border-color: $color-background-gray;
+      color: $color-gray;
+    }
+  }
+
+  &__transparent {
+    @extend .button;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: $color-gray;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    letter-spacing: 1px;
+    transition: $transition-time;
+
+    &:hover,
+    &:focus {
+      background-color: $color-background-pressed;
+    }
+  }
+
+  &__transparentUnderlined {
+    @extend .button;
+    width: fit-content;
+    max-width: 100%;
+    font-family: Raleway-Light, sans-serif;
+    padding: 0;
+    letter-spacing: 2px;
+    background: none;
+    border: none;
+    text-align: left;
+
+    span {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: block;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 10px;
+      border-bottom: 1.5px solid $color-black;
+    }
+
+    &__white {
+      @extend .button__transparentUnderlined;
+      color: $color-text-light;
+
+      &:after {
+        border-color: $color-text-light;
+      }
+    }
+  }
+
+  &__edit {
+    @extend .button;
+    background: none;
+    border: none;
+    padding: 0;
+
+    .icon {
+      font-size: 20px;
+      fill: $color-black;
+      display: flex;
+
+      path {
+        transition: 0.2s;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .icon {
+        path:first-child {
+          fill: $color-yellow;
+        }
+      }
+    }
+  }
+
+  &__delete {
+    @extend .button;
+    border: 1px solid $color-red;
+    background-color: $color-red;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-width: 100px;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      background-color: $color-red;
+    }
+  }
+}

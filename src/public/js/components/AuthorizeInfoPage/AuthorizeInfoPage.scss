@@ -1,0 +1,16 @@
+@import "~Styles/colors.scss";
+
+$modal-width: 700px;
+$menu-width: 200px;
+
+.authorize_info_page {
+  background-color: $color-white;
+  border-radius: 2px;
+  min-width: $modal-width;
+  max-width: $modal-width;
+
+  &__label {
+    font-family: Roboto-Bold, sans-serif;
+    overflow-wrap: break-word;
+  }
+}

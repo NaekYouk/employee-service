@@ -1,0 +1,133 @@
+@import "~Styles/colors";
+
+.page_container {
+  font-family: Roboto-Light, sans-serif;
+  background-color: $color-black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .page_content {
+    color: $color-text-light;
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .left_column {
+      flex: 2;
+      padding-top: 40px;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .page_message_wrapper {
+
+
+        .italic {
+          font-family: Raleway-Thin, sans-serif;
+          font-style: italic;
+        }
+      }
+    }
+
+    .right_column {
+      flex: 1;
+      max-width: 350px;
+
+      .top_buttons {
+        display: flex;
+        justify-content: flex-end;
+
+        .switch_button {
+          font-size: 18px;
+          font-family: Raleway-Regular, sans-serif;
+          background-color: $color-background-pressed;
+          color: $color-lightGray;
+          border: 1px solid $color-background-pressed;
+          border-top-right-radius: 2px;
+          border-top-left-radius: 2px;
+          padding: 10px 20px;
+          cursor: pointer;
+          transition: 0.2s;
+          outline: none;
+
+          &:hover {
+            background-color: $color-background-gray;
+            border-color: $color-background-gray;
+            color: $color-gray;
+          }
+        }
+      }
+
+      &_content {
+        padding: 40px 30px 30px 30px;
+        background-color: $color-white;
+        color: $color-black;
+        border-radius: 2px 0 2px 2px;
+        position: relative;
+
+        .title {
+          font-size: 25px;
+          color: $color-gray;
+          font-family: Raleway-Regular, sans-serif;
+          margin-bottom: 40px;
+        }
+
+        .input_wrapper {
+          padding-top: 20px;
+
+          &:first-of-type {
+            padding-top: 0;
+          }
+
+          .first_paragraph {
+            padding-top: 25px;
+            padding-bottom: 7px;
+            letter-spacing: 1.5px;
+            font-family: Raleway-Light, sans-serif;
+
+            &:first-child {
+              padding-top: 0;
+            }
+          }
+        }
+
+        .submit_button_wrapper {
+          margin-top: 30px;
+        }
+
+        .tip {
+          line-height: 1.5;
+          font-size: 12px;
+          color: gray;
+
+          &_password {
+            @extend .tip;
+            margin-top: 10px;
+          }
+
+          &_policy {
+            @extend .tip;
+            margin-top: 35px;
+
+            &:before {
+              content: "";
+              border-bottom: 2px solid $color-background-gray;
+              width: 100px;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

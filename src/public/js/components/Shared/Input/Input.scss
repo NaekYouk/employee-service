@@ -1,0 +1,60 @@
+@import "~Styles/colors";
+
+.input {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 10px 5px;
+  border-bottom: 1px solid $color-black;
+  outline: none;
+
+  &::placeholder {
+    color: $color-input-placeholder;
+    font-family: Roboto-Light, sans-serif;
+  }
+
+  &_default {
+    @extend .input;
+    color: $color-gray;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-gray;
+    transition: 0.2s ease-in-out;
+
+    &:focus {
+      cursor: text;
+      background-color: $color-background-pressed;
+      border-bottom: 1px solid $color-lightGray;
+    }
+  }
+
+  &_topic_title {
+    @extend .input_default;
+    background-color: transparent;
+    font-size: 14px;
+
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+.invalid {
+  transition: 0.2s;
+  border-color: $color-red;
+  background-color: $color-light-red;
+  color: $color-red;
+
+  &::placeholder {
+    color: $color-light-red-2;
+  }
+
+  &:focus {
+    border-color: $color-gray;
+    background-color: inherit;
+    color: $color-gray;
+
+    &::placeholder {
+      color: $color-input-placeholder;
+    }
+  }
+}

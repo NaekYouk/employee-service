@@ -1,0 +1,25 @@
+@import "~Styles/layers.scss";
+
+.fullscreen_loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  z-index: $top_level;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_visible {
+    @extend .fullscreen_loader;
+    opacity: 0.8;
+  }
+}
+
+.local {
+  @extend .fullscreen_loader;
+  z-index: $low_level;
+  position: absolute;
+}

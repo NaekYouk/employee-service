@@ -1,0 +1,76 @@
+@import "~Styles/colors.scss";
+
+$border-radius: 2px;
+
+.signInPopup {
+  &_container {
+    background-color: $color-white;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    border-radius: $border-radius;
+  }
+
+  &_button {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Raleway-Light, sans-serif;
+    text-decoration: none;
+    color: $color-black;
+    font-size: 25px;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: 0.4s ease-in-out;
+
+    &:before {
+      content: "";
+      box-shadow: inset 0px -3px 0px 0px #FEDC00;
+      width: 0%;
+      position: absolute;
+      height: 100%;
+      transition: 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-color: $color-background-pressed;
+
+      &:first-child {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+      }
+
+      &:before {
+        @extend .signInPopup_button:before;
+        width: 50%;
+      }
+    }
+  }
+
+  &_closeButton {
+    cursor: pointer;
+    position: absolute;
+    font-size: 20px;
+    top: -30px;
+    left: calc(100% + 10px);
+
+    path {
+      transition: 0.4s;
+    }
+
+    path:first-child {
+      fill: $color-text-light;
+
+      &:hover {
+        fill: $color-background-pressed;
+      }
+    }
+  }
+}

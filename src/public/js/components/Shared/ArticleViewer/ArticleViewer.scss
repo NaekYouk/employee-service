@@ -1,0 +1,221 @@
+@import "~Styles/colors.scss";
+@import "~Styles/animations.scss";
+@import "~Styles/layers.scss";
+
+$transition-time: 0.2s;
+
+.articleViewer__container {
+  width: 1024px;
+  height: auto;
+  background-color: $color-white;
+
+  .horizontalWrapper {
+    display: flex;
+    background-color: $color-black;
+  }
+
+  .verticalWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-white;
+  }
+
+  .imageSection {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-height: 500px;
+    overflow: hidden;
+    position: relative;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      .zoomShadow {
+        opacity: 0.5;
+        z-index: $low_priority_level;
+      }
+    }
+
+    .zoomShadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      transition: $transition-time;
+      opacity: 0;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: $invisible_level;
+
+      svg {
+        fill: $color-white;
+      }
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .commentsSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    min-width: 400px;
+    max-width: 400px;
+    background-color: $color-black;
+    overflow-y: auto;
+
+    .caption__wrapper {
+      width: 100%;
+      color: $color-white;
+
+      p {
+        &:after {
+          margin-top: 10px;
+          margin-bottom: 30px;
+          display: block;
+          width: 100%;
+          content: "";
+          border-bottom: 1px solid $color-gray;
+        }
+      }
+    }
+
+    .loader__wrapper {
+      min-height: 100px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .comment__container {
+      width: 100%;
+      margin-bottom: 30px;
+      color: $color-white;
+      display: flex;
+
+      .comment__wrapper {
+        flex: 1;
+
+        .imageInfo__wrapper {
+          font-size: 14px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex: 1;
+
+          .commentAuthor {
+            color: $color-lightGray;
+            a {
+              color: $color-background-pressed;
+              text-decoration: none;
+              font-weight: bold;
+              @extend .highlight_link_yellow;
+            }
+          }
+
+          .commentCreationDate {
+            padding-left: 5px;
+            color: $color-lightGray;
+            font-family: Roboto-Light, sans-serif;
+          }
+        }
+
+        .commentBody {
+          color: $color-white;
+          margin-bottom: 10px;
+          width: 100%;
+          padding-right: 5px;
+          word-break: break-word;
+          line-height: 150%;
+        }
+      }
+
+      .commentNumber {
+        width: 10px;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 13px;
+        border-left: 1px solid $color-gray;
+        color: $color-gray;
+      }
+    }
+  }
+
+  .commentEditor__container {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    max-width: 100%;
+    height: 200px;
+    justify-content: center;
+
+    .notAuthorized {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .link__wrapper {
+        color: $color-lightGray;
+        line-height: 1.5;
+        font-size: 15px;
+        font-family: Raleway-Light, sans-serif;
+
+        &:before {
+          margin-top: 30px;
+          margin-bottom: 15px;
+          display: block;
+          content: "";
+          border-bottom: 2px solid $color-background-gray;
+        }
+
+        a {
+          padding-left: 6px;
+          text-decoration: none;
+          font-weight: bold;
+          color: $color-lightGray;
+          transition: 0.3s ease-in-out;
+          outline: none;
+
+          &:hover,
+          &:focus {
+            color: $color-yellow
+          }
+        }
+      }
+    }
+  }
+
+  .commentEditor__buttonWrapper {
+    padding-left: 15px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .commentEditor__closeButtonWrapper {
+    padding-right: 15px;
+  }
+
+  .caption {
+    text-transform: uppercase;
+    font-size: 18px;
+    width: fit-content;
+    letter-spacing: 1.5px;
+  }
+}

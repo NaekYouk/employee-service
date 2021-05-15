@@ -1,0 +1,69 @@
+@import "~Styles/colors.scss";
+
+$transition-time: 0.2s;
+
+.textArea {
+  resize: none;
+  height: auto;
+  width: auto;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  line-height: 150%;
+}
+
+.default {
+  @extend .textArea;
+  padding: 10px 5px;
+  border-bottom: 1px solid $color-gray;
+  background-color: $color-white;
+  transition: $transition-time;
+
+  &::placeholder {
+    color: $color-input-placeholder;
+    font-family: Roboto-Light, sans-serif;
+  }
+
+  &:focus {
+    color: $color-gray;
+    background-color: $color-background-pressed;
+    border-bottom: 1px solid $color-gray;
+    cursor: text;
+  }
+}
+
+.post {
+  @extend .default;
+  width: 100%;
+}
+
+.resizableVertically {
+  resize: vertical;
+  max-height: 100%;
+}
+
+.resizableHorizontally {
+  resize: horizontal;
+  max-width: 100%;
+}
+
+.invalid {
+  transition: $transition-time;
+  border-color: $color-red;
+  background-color: $color-light-red;
+  color: $color-red;
+
+  &::placeholder {
+    color: $color-light-red-2;
+  }
+
+  &:focus {
+    border-color: $color-gray;
+    background-color: inherit;
+    color: $color-gray;
+
+    &::placeholder {
+      color: $color-input-placeholder;
+    }
+  }
+}

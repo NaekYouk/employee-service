@@ -1,0 +1,34 @@
+@import '~Styles/colors.scss';
+@import '~Styles/animations.scss';
+
+.links_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 190px;
+
+
+  a {
+    color: $color-white;
+    font-size: 35px;
+    text-decoration: none;
+    @extend .highlight_link_yellow;
+
+    .link {
+      color: inherit;
+      font-size: inherit;
+
+      &_from_top {
+        @extend .link;
+        @extend .flip_in_icon_left_top;
+      }
+
+      &_from_bottom {
+        @extend .link;
+        @extend .flip_in_icon_left_bottom
+      }
+    }
+  }
+}
+
+
+
