@@ -1,0 +1,92 @@
+@import '~Styles/colors.scss';
+@import "~Styles/layers.scss";
+@import "~Styles/animations.scss";
+
+.header {
+  -webkit-box-shadow: 0px -13px 18px 13px rgba(0,0,0,0.18);
+  -moz-box-shadow: 0px -13px 18px 13px rgba(0,0,0,0.18);
+  box-shadow: 0px -13px 18px 13px rgba(0,0,0,0.18);
+  background-color: $color-white;
+  z-index: $middle_level;
+
+  &_wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &_container {
+    max-width: 1280px;
+    min-width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &_icon {
+      max-height: 50px;
+      width: auto;
+    }
+
+    &_name {
+      font-family: Roboto-Bold, sans-serif;
+      text-transform: uppercase;
+      padding-left: 7px;
+      letter-spacing: 1.5px;
+      color: #202020;
+    }
+  }
+}
+
+.navBar {
+  &_link {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    @extend .highlight_navbar_link_lightgray;
+  }
+
+  &_selected {
+    @extend .navBar_link;
+    -webkit-box-shadow: inset 0px -3px 0px 0px ;
+    -moz-box-shadow: inset 0px -3px 0px 0px $color-yellow;
+    box-shadow: inset 0px -3px 0px 0px $color-yellow;
+    background-color: $color-background-pressed;
+  }
+
+  &_wrapper {
+    ul {
+      display: flex;
+      list-style: none;
+
+      li {
+        display: flex;
+        font-family: Raleway-Medium, sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #202020;
+        opacity: 0;
+
+        a {
+          color: #202020;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .inactive_link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "~Styles/colors.scss";
+
+.searchInput__wrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .input {
+    padding-right: 40px;
+  }
+
+  .icon {
+    font-size: 25px;
+    right: 11px;
+    top: 12px;
+    cursor: pointer;
+    position: absolute;
+    opacity: 1;
+    transition: 0.2s;
+    fill: $color-black;
+
+    &:hover {
+      fill: $color-yellow;
+    }
+
+    &__hidden {
+      @extend .icon;
+      opacity: 0;
+    }
+  }
+}

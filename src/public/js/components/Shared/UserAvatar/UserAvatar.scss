@@ -1,0 +1,67 @@
+@import "~Styles/colors.scss";
+@import "~Styles/animations.scss";
+
+.container {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+
+  .userAvatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    .shadow {
+      opacity: 0.5;
+    }
+
+    .edit_link {
+      opacity: 1;
+    }
+  }
+
+  .shadow {
+    background-color: $color-black;
+    transition: 0.2s;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .edit_link {
+    transition: 0.2s;
+    opacity: 0;
+    color: $color-white;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.gray {
+  fill: $color-input-placeholder;
+  border: 2px solid $color-input-placeholder
+}
+
+.white {
+  fill: $color-white;
+  border: 2px solid $color-white;
+}
+
+.black {
+  fill: $color-black;
+  border: 2px solid $color-black;
+}

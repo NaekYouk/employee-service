@@ -1,0 +1,9 @@
+# /node_modules/* in the project root is ignored by default
+# build artifacts
+build/*
+# tests
+tests/*
+# data definition files
+**/*.d.ts
+# 3rd party libs
+webpack.config.js

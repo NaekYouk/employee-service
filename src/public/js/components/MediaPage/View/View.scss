@@ -1,0 +1,62 @@
+@import '~Styles/colors.scss';
+
+$media-item-height: 300px;
+$media-container-width: 1280px;
+
+.media_page_container {
+  height: 100%;
+  background-color: $color-black;
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .fullscreen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loader_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .media_item {
+    flex: 25%;
+    max-width: 25%;
+    height: $media-item-height;
+    position: relative;
+  }
+
+  .image_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    max-width: $media-container-width;
+    min-width: $media-container-width;
+    overflow-y: auto;
+  }
+
+  .addButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    fill: $color-black;
+    background-color: $color-white;
+    transition: 0.3s;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      background-color: $color-background-pressed;
+      fill: $color-black;
+    }
+  }
+}

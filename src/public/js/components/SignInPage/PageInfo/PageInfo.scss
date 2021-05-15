@@ -1,0 +1,37 @@
+@import "~Styles/colors.scss";
+
+.page_message {
+  font-size: 25px;
+  font-family: Raleway-Thin, sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+
+  .message_details {
+    padding-top: 20px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    font-family: Roboto-thin, sans-serif;
+  }
+
+  .support_link {
+    &:before {
+      content: " ";
+      display: block;
+      border-top: 1px solid $color-gray;
+      margin-bottom: 20px;
+    }
+
+    padding-top: 40px;
+    color: $color-lightGray;
+    width: 80%;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-family: Roboto-Thin, sans-serif;
+    line-height: 22px;
+
+    a {
+      cursor: pointer;
+      color: $color-yellow-dark;
+    }
+  }
+}

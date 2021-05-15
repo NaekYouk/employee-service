@@ -1,0 +1,10 @@
+@import "~Styles/colors.scss";
+
+.container {
+  padding: 30px;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  color: $color-lightGray;
+  border-bottom: 1px solid $color-background-gray;
+}

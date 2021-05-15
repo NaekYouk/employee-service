@@ -1,0 +1,7 @@
+# Distribution / packaging
+.idea/
+build/
+.env
+node_modules/
+.yarnrc
+.package-lock.json

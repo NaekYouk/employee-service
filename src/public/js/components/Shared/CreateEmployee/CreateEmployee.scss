@@ -1,0 +1,25 @@
+@import "~Styles/colors.scss";
+
+.login_icon_wrapper {
+  padding-top: 4px;
+  cursor: pointer;
+
+  path {
+    transition: 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    path:last-child {
+      fill: $color-yellow;
+    }
+  }
+}
+
+.employee_add {
+  height: 40px;
+  cursor: pointer;
+  padding: 9px;
+  border: 2px solid #000;
+  border-radius: 50%;
+}

@@ -1,0 +1,29 @@
+@import "~Styles/colors.scss";
+
+.title {
+  font-family: Raleway-Light, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.withDash:after {
+  content: "";
+  width: 40%;
+  border-bottom: 1px solid;
+  margin-top: 15px;
+  display: block;
+}
+
+.white {
+  color: $color-white;
+  border-color: $color-white;
+}
+
+.black {
+  color: $color-black;
+  border-color: $color-black;
+}

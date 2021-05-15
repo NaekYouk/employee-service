@@ -1,0 +1,30 @@
+.employee__card {
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin-bottom: 30px;
+  margin-left: 35px;
+  min-width: 220px;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    transform: translate3d(1px, -5px, 0);
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &_label {
+    font-family: Roboto-Bold, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #202020;
+
+    &_container {
+      margin-top: 6px;
+    }
+  }
+
+  &_link {
+    text-decoration: none;
+  }
+}

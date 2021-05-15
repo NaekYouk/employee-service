@@ -1,0 +1,25 @@
+.right_section {
+  width: 100%;
+  margin: 0 40px 50px;
+
+  svg {
+    stroke: #bbbbbb;
+  }
+
+  li {
+    gap: 10px;
+    margin-top: 25px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .right_section__row_name {
+    width: 35%;
+    font-weight: 600;
+  }
+}

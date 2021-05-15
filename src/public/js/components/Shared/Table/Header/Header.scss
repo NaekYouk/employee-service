@@ -1,0 +1,45 @@
+@import "~Styles/colors.scss";
+@import "~Styles/layers.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $color-white;
+  background-color: $color-black;
+  padding: 15px;
+  position: sticky;
+  z-index: $low_priority_level;
+  top: 0;
+
+  .column {
+    font-family: "Raleway-Medium", sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+  }
+
+  .small {
+    flex: 1;
+  }
+
+  .medium {
+    flex: 2;
+  }
+
+  .large {
+    flex: 3;
+  }
+
+  .leftAlign {
+    justify-content: flex-start;
+  }
+
+  .rightAlign {
+    justify-content: flex-end;
+  }
+
+  .centerAlign {
+    justify-content: center;
+  }
+}

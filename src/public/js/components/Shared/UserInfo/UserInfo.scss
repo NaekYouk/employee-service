@@ -1,0 +1,21 @@
+@import '~Styles/colors.scss';
+
+.login_icon_wrapper {
+  padding-top: 4px;
+  cursor: pointer;
+
+  path {
+   transition: 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    path:last-child {
+      fill: $color-yellow;
+    }
+  }
+}
+
+.user_item {
+  cursor: pointer;
+}

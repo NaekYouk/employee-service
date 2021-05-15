@@ -1,0 +1,46 @@
+@import "~Styles/colors.scss";
+
+$modal-width: 700px;
+$menu-width: 200px;
+$modal-width: 500px;
+
+.profile_edit {
+  background-color: $color-white;
+  border-radius: 2px;
+  min-width: $modal-width;
+  max-width: $modal-width;
+  min-height: $modal-width;
+
+  .display_section {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__list {
+    margin: 20px;
+
+    &_item {
+      margin: 15px 0;
+      display: flex;
+
+      &_title {
+        align-self: flex-end;
+        align-items: initial;
+        width: 250px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    width: 100%;
+    border-color: #ffffff;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+  }
+
+  &__select {
+    width: 100%;
+  }
+}
