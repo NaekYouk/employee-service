@@ -1,8 +1,10 @@
 .employee_page {
   &__container {
     padding: 20px;
-    margin: 120px;
+    margin: 120px auto;
     display: flex;
     background-color: #ffffff;
+    max-width: 1280px;
+    min-width: 1280px;
   }
 }
