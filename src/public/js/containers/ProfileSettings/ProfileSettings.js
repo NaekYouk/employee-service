@@ -2,13 +2,13 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { closeModal, showModal } from "../../actions/Shared/modalActions";
 import ProfileSettings from "../../components/ProfileSettings/ProfileSettings";
-import { changeUserProfile, fetchUserData } from "Actions/ProfileModal/profileModalActions";
+import { changeUserProfileImage, fetchUserData } from "Actions/ProfileModal/profileModalActions";
 
 const mapStateToProps = ({ ProfileModalState, AccountState }) => ({
   isProfileOwner: AccountState.userId === ProfileModalState.userId,
   userId: ProfileModalState.userId,
   userName: ProfileModalState.userName,
-  userImage: ProfileModalState.userImage,
+  image: ProfileModalState.image,
   userJoinDate: ProfileModalState.userJoinDate,
   userAccess: ProfileModalState.userAccess,
   isLoading: ProfileModalState.isLoading,
@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
   changeUserProfile: (userId, profileImage) => {
-    dispatch(changeUserProfile(userId, profileImage));
+    dispatch(changeUserProfileImage(userId, profileImage));
   }
 });
 

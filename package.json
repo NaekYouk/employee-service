@@ -10,7 +10,6 @@
   },
   "scripts": {
     "clear": "yarn cache clean --force && rimraf build",
-    "logs": "heroku logs -a burning-wheels --tail",
     "test": "jest --forceExit --verbose",
     "start": "node build/index.js",
     "build:api": "tsc",

@@ -44,7 +44,7 @@ const EmployeesState = (state = initialState, { data, type } = {}) => {
         ...state,
         isLoading: false,
         employee: data,
-        // userImage: data.userImage
+        image: data.image
       };
 
     case FETCH_EMPLOYEE_PAGE_ERROR:

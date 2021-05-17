@@ -1,7 +1,7 @@
 import jwt, { VerifyErrors } from "jsonwebtoken";
 import "./env";
 import { NextFunction, Request, Response } from "express";
-import { Token, Employee } from "users";
+import { Token, Employee } from "employees.d.ts";
 import { Maybe } from "common";
 
 export const generateToken = (data: Employee): string => {

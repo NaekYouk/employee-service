@@ -1,11 +1,12 @@
-import query from "./users.queries";
+import query from "./employees.queries";
 import { sqlQuery } from "../postgres";
 import bcrypt from "bcryptjs";
 import "../utils/env";
 import { Maybe } from "common";
-import { Employee, EmployeeRequestBody } from "users";
-import { validateString } from "../utils/string-helpers";
+import { Employee, EmployeeRequestBody } from "employees.d.ts";
+import { validateString, getCloudinaryMediaFilesPath } from "../utils/string-helpers";
 import { generatePassword } from "../utils/authorization-helpers";
+import cloudinary from "cloudinary";
 
 const SALT_ROUNDS = 10;
 
@@ -83,6 +84,7 @@ const getEmployeeById = async (userId: number): Promise<Omit<Employee, "password
       mobile,
       email,
       role,
+      image,
       employment_date,
     } = employee[0];
 
@@ -97,6 +99,7 @@ const getEmployeeById = async (userId: number): Promise<Omit<Employee, "password
       mobile,
       email,
       role,
+      image,
       employment_date,
     };
   }
@@ -110,6 +113,29 @@ const updateEmployee = async (data: Employee): Promise<any> => {
   const updatedEmployee = await sqlQuery(query.updateEmployeeData(data));
 
   return Promise.resolve(updatedEmployee);
+};
+
+const updateEmployeeImage = async (data): Promise<void> => {
+  validateString(data.image, "Image is not a string");
+
+  const publicId: string = getCloudinaryMediaFilesPath([data.name, data.surname].join("_"));
+  const response: any = await cloudinary.v2.uploader.upload(data.image, {
+    resource_type: "image",
+    public_id: publicId,
+    overwrite: true,
+  });
+  if (response && response.secure_url) {
+    try {
+      const updatedEmployee = await sqlQuery(
+        query.updateEmployeeData({ ...data, image: response.secure_url })
+      );
+
+      return Promise.resolve(updatedEmployee);
+    } catch (e) {
+      console.log(e);
+      await cloudinary.v2.uploader.destroy(publicId);
+    }
+  }
 };
 
 const getEmployeesByFullName = async ({
@@ -132,4 +158,5 @@ export default {
   getEmployeesByFullName,
   removeEmployee,
   updateEmployee,
+  updateEmployeeImage,
 };

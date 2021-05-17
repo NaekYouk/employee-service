@@ -8,7 +8,7 @@ import styles from "./Employees.scss";
 const Employees = ({ employees, isLoading, location, history, searchEmployees }) => {
   useEffect(() => {
     const fullNameValue = getQueryValueByKey(location, "fullName");
-    console.log(fullNameValue);
+
     if (!fullNameValue) {
       return history.push("/");
     }
