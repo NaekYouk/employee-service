@@ -1,5 +1,4 @@
-import employeesAPI from "../users/users.api";
-import mediaAPI from "../media/media.api";
+import employeesAPI from "../employees/employees.api";
 import { RouteModuleOutput } from "routes";
 import { initializeRouter } from "../utils/routes-helpers";
 
@@ -10,12 +9,6 @@ const routes: RouteModuleOutput = {
       employeesAPI.route,
       {
         use: employeesAPI.router,
-      },
-    ],
-    [
-      mediaAPI.route,
-      {
-        use: mediaAPI.router,
       },
     ],
   ]),

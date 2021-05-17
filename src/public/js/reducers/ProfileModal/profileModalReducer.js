@@ -11,7 +11,7 @@ const initialState = {
   userId: null,
   userAccess: null,
   userJoinDate: null,
-  userImage: null,
+  image: null,
   isLoading: false,
   error: "",
 };
@@ -32,7 +32,7 @@ const ProfileModal = (state = initialState, { data, type } = {}) => {
         userId: data.id,
         userAccess: data.role,
         userJoinDate: data.employment_date,
-        userImage: data.userImage,
+        image: data.image,
       };
 
     case FETCH_USER_DATA_ERROR:
@@ -52,7 +52,6 @@ const ProfileModal = (state = initialState, { data, type } = {}) => {
       return {
         ...state,
         isLoading: false,
-        userImage: data.userImage,
         error: "",
       };
 

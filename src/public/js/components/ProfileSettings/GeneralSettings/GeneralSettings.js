@@ -17,7 +17,7 @@ class GeneralSettings extends React.Component {
   }
 
   render = () => {
-    const { userName, userId, userJoinDate, userImage, changeUserProfile } = this.props;
+    const { userName, userId, userJoinDate, image, changeUserProfile } = this.props;
     const { isImageEditModeOn } = this.state;
 
     return (
@@ -39,7 +39,7 @@ class GeneralSettings extends React.Component {
                 <span className={styles.label}>Avatar</span>
                 <span className={styles.value}>
                   <UserAvatar
-                    imageSrc={userImage}
+                    imageSrc={image}
                     color={USER_AVATAR_COLOR.BLACK}
                     isEditable
                     onEditClick={() => this.toggleProfileImageEditor()}

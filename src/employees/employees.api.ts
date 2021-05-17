@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
-import usersController from "./users.controller";
-import { checkAdminRights, generateToken, verifyToken } from "../utils/authorization-helpers";
-import { Employee } from "users";
+import usersController from "./employees.controller";
+import { generateToken } from "../utils/authorization-helpers";
+import { Employee } from "employees.d.ts";
 import { Maybe } from "common";
 import { RouteModuleOutput } from "routes";
 import { initializeRouter } from "../utils/routes-helpers";
+import { formatDate } from "../utils/string-helpers";
 
 const signIn = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -93,9 +94,35 @@ const updateEmployeeData = async (req: Request, res: Response): Promise<void> =>
   }
 };
 
+const updateEmployeeImage = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const userId: string = req.params.userId;
+    const employee: Maybe<Omit<Employee, "password">> = await usersController.getEmployeeById(
+      +userId
+    );
+
+    if (employee) {
+      const updatedEmployeeData = await usersController.updateEmployeeImage({
+        ...employee,
+        employment_date: formatDate(employee.employment_date),
+        image: req.body.image,
+      });
+
+      res.status(200).json(updatedEmployeeData);
+    } else {
+      res.status(204).end();
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 const findEmployees = async (req: Request, res: Response): Promise<void> => {
   try {
-    const foundEmployees = await usersController.getEmployeesByFullName(req.query);
+    const foundEmployees = await usersController.getEmployeesByFullName(
+      req.query as { fullName: string }
+    );
     res.status(200).json({ employees: foundEmployees, length: foundEmployees.length });
   } catch (e) {
     console.log(e);
@@ -124,6 +151,7 @@ const routes: RouteModuleOutput = {
       {
         get: getEmployeeById,
         put: updateEmployeeData,
+        patch: updateEmployeeImage,
         delete: fireEmployee,
       },
     ],

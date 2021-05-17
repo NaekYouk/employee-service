@@ -10,45 +10,42 @@ import {
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
-  SET_USER_DATA_FROM_LOCAL_STORAGE
+  SET_USER_DATA_FROM_LOCAL_STORAGE,
 } from "Reducers/SignInPage/signInPageReducer";
 import { getErrorStatus } from "Utils/error-helpers/error-helpers";
 import { pathToMainPage } from "Utils/path-helpers/routerPaths";
 import { redirectTo } from "Actions/Shared/historyActions";
-import {
-  signInPath,
-  userCreationPath
-} from "Utils/path-helpers/signInPagePaths";
+import { employeeCreate, signInPath } from "Utils/path-helpers/signInPagePaths";
 import { deleteSessionData, setSessionData } from "Utils/storage-helpers/storage-helpers";
 
 const ERRORS = {
   WRONG_NAME: "Username or password is incorrect",
   USER_EXISTS: "User with such name or email already exists",
   UNKNOWN: "We don't really know what has happened. Try again later",
-  SESSION_EXPIRED: "Current session has expired"
+  SESSION_EXPIRED: "Current session has expired",
 };
 
 export const setSignInPageType = (data) => ({
   type: SET_SIGN_IN_PAGE_TYPE,
-  data
+  data,
 });
 
 export const signInBegin = () => ({
-  type: SIGN_IN_BEGIN
+  type: SIGN_IN_BEGIN,
 });
 
 export const signInSuccess = (data) => ({
   type: SIGN_IN_SUCCESS,
-  data
+  data,
 });
 
 export const signInError = (data) => ({
   type: SIGN_IN_ERROR,
-  data
+  data,
 });
 
 export const signInEnd = () => ({
-  type: SIGN_IN_END
+  type: SIGN_IN_END,
 });
 
 export const signIn = (body, history) => (dispatch) => {
@@ -69,18 +66,18 @@ export const signIn = (body, history) => (dispatch) => {
 };
 
 export const userCreationBegin = () => ({
-  type: USER_CREATION_BEGIN
+  type: USER_CREATION_BEGIN,
 });
 
 export const userCreationError = () => ({
-  type: USER_CREATION_ERROR
+  type: USER_CREATION_ERROR,
 });
 
 export const createUser = (body) => (dispatch) => {
   dispatch(userCreationBegin());
 
   axios
-    .post(userCreationPath(), body)
+    .post(employeeCreate(), body)
     .then((res) => {
       dispatch(signInSuccess(res.data));
       setSessionData(res.data);
@@ -95,15 +92,15 @@ export const createUser = (body) => (dispatch) => {
 };
 
 export const signOutBegin = () => ({
-  type: SIGN_OUT_BEGIN
+  type: SIGN_OUT_BEGIN,
 });
 
 export const signOutError = () => ({
-  type: SIGN_OUT_ERROR
+  type: SIGN_OUT_ERROR,
 });
 
 export const signOutSuccess = () => ({
-  type: SIGN_OUT_SUCCESS
+  type: SIGN_OUT_SUCCESS,
 });
 
 export const signOut = () => (dispatch) => {
@@ -118,5 +115,5 @@ export const signOut = () => (dispatch) => {
 
 export const setUserDataFromLocalStorage = (data) => ({
   type: SET_USER_DATA_FROM_LOCAL_STORAGE,
-  data
+  data,
 });

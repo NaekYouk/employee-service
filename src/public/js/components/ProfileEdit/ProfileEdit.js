@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./ProfileEdit.scss";
 import MenuItemHeader from "Components/ProfileSettings/MenuItemHeader/MenuItemHeader";
@@ -67,6 +67,7 @@ const ProfileEdit = ({
   saveEdits,
 }) => {
   const [userInfo, setUserInfo] = useState(isCreateMode ? {} : employee);
+
   const myChangeHandler = (key, value) => {
     setUserInfo((prevState) => ({ ...prevState, [key]: value }));
   };

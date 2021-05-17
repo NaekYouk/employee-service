@@ -1,4 +1,4 @@
-import { Employee } from "users";
+import { Employee } from "employees.d.ts";
 
 const query = {
   getEmployeeByEmail: (email: string): string => `
@@ -38,6 +38,7 @@ const query = {
       room,
       mobile,
       email,
+      image,
       employment_date,
       role
     FROM 
@@ -56,6 +57,7 @@ const query = {
       room,
       mobile,
       email,
+      image,
       employment_date
     FROM 
       employees
@@ -69,30 +71,32 @@ const query = {
   `,
 
   updateEmployeeData: ({
-    id,
-    name,
-    surname,
-    patronymic,
-    sex,
     department,
-    room,
-    mobile,
     email,
     employment_date,
+    id,
+    image,
+    mobile,
+    name,
+    patronymic,
     role,
+    room,
+    sex,
+    surname,
   }: Employee): string => `
     UPDATE employees
     SET
       "name" = '${name}',
-      surname = '${surname}',
-      patronymic = '${patronymic}',
-      sex = '${sex}',
       department = '${department}',
-      room = '${room}',
-      mobile = '${mobile}',
       email = '${email}',
       employment_date = '${employment_date}',
-      role = '${role}'
+      image = '${image}',
+      mobile = '${mobile}',
+      patronymic = '${patronymic}',
+      role = '${role}',
+      room = '${room}',
+      sex = '${sex}',
+      surname = '${surname}'
     WHERE id = ${id}
     RETURNING *;
     `,

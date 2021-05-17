@@ -5,23 +5,22 @@ import {
   FETCH_USER_DATA_ERROR,
   CHANGE_PROFILE_ICON_BEGIN,
   CHANGE_PROFILE_ICON_SUCCESS,
-  CHANGE_PROFILE_ICON_ERROR
+  CHANGE_PROFILE_ICON_ERROR,
 } from "Reducers/ProfileModal/profileModalReducer";
 
 import { employeeInfoPath } from "Utils/path-helpers/signInPagePaths";
 
-
 export const fetchUserDataBegin = () => ({
-  type: FETCH_USER_DATA_BEGIN
+  type: FETCH_USER_DATA_BEGIN,
 });
 
 export const fetchUserDataSuccess = (data) => ({
   type: FETCH_USER_DATA_SUCCESS,
-  data
+  data,
 });
 
 export const fetchUserDataError = () => ({
-  type: FETCH_USER_DATA_ERROR
+  type: FETCH_USER_DATA_ERROR,
 });
 
 export const fetchUserData = (userId) => (dispatch) => {
@@ -36,28 +35,27 @@ export const fetchUserData = (userId) => (dispatch) => {
     });
 };
 
-
 export const changeUserProfileBegin = () => ({
-  type: CHANGE_PROFILE_ICON_BEGIN
+  type: CHANGE_PROFILE_ICON_BEGIN,
 });
 
 export const changeUserProfileSuccess = (data) => ({
   type: CHANGE_PROFILE_ICON_SUCCESS,
-  data
+  data,
 });
 
 export const changeUserProfileError = () => ({
-  type: CHANGE_PROFILE_ICON_ERROR
+  type: CHANGE_PROFILE_ICON_ERROR,
 });
 
-export const changeUserProfile = (userId, profileImage) => (dispatch) => {
+export const changeUserProfileImage = (userId, image) => (dispatch) => {
   dispatch(changeUserProfileBegin());
   axios
     .patch(employeeInfoPath(userId), {
-      userImage: profileImage
+      ...image,
     })
     .then((res) => {
-      dispatch(changeUserProfileSuccess(res.data));
+      dispatch(changeUserProfileSuccess(res.data[0]));
     })
     .catch(() => {
       dispatch(changeUserProfileError());

@@ -12,6 +12,7 @@ const EmployeePage = ({
   isLoading,
   employee,
   role,
+  image,
   showModal,
 }) => {
   useEffect(() => {
@@ -31,11 +32,12 @@ const EmployeePage = ({
     <div className={styles.employee_page__container}>
       <LeftSection
         id={employee.id}
-        showModal={showModal}
+        image={employee.image}
         name={employee.name}
-        surname={employee.surname}
-        sex={employee.sex}
         role={role}
+        sex={employee.sex}
+        showModal={showModal}
+        surname={employee.surname}
       />
       <RightSection
         department={employee.department}

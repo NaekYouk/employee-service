@@ -10,6 +10,7 @@ export type Employee = {
   email: string;
   employment_date: string;
   role: string;
+  image?: string;
   password?: string;
 };
 

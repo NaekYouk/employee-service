@@ -1,8 +1,21 @@
 .left_section {
+  text-align: center;
   padding: 40px;
   border-right: 1px solid #bbbbbb;
-  img {
-    border-radius: 50%;
+
+  &__img {
+    height: 100%;
+    min-width: 100%;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+
+    &_wrapper {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+    }
   }
 
   &__title {
