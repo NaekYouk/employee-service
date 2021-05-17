@@ -9,6 +9,8 @@ import {
 } from "Reducers/ProfileModal/profileModalReducer";
 
 import { employeeInfoPath } from "Utils/path-helpers/signInPagePaths";
+import { fetchEmployeePageDataSuccess } from "Actions/Employees/employeesActions";
+import { closeModal } from "Actions/Shared/modalActions";
 
 export const fetchUserDataBegin = () => ({
   type: FETCH_USER_DATA_BEGIN,
@@ -48,7 +50,7 @@ export const changeUserProfileError = () => ({
   type: CHANGE_PROFILE_ICON_ERROR,
 });
 
-export const changeUserProfileImage = (userId, image) => (dispatch) => {
+export const changeUserProfileImage = (userId, image, isEmployeePageEdit) => (dispatch) => {
   dispatch(changeUserProfileBegin());
   axios
     .patch(employeeInfoPath(userId), {
@@ -56,6 +58,10 @@ export const changeUserProfileImage = (userId, image) => (dispatch) => {
     })
     .then((res) => {
       dispatch(changeUserProfileSuccess(res.data[0]));
+      if (isEmployeePageEdit) {
+        dispatch(fetchEmployeePageDataSuccess(res.data[0]));
+        dispatch(closeModal());
+      }
     })
     .catch(() => {
       dispatch(changeUserProfileError());

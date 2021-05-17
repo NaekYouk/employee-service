@@ -1,6 +1,4 @@
 import React from "react";
-import SignInPopup from "Containers/SignInPopup/SignInPopup";
-// import UserAvatar, { USER_AVATAR_COLOR } from "../UserAvatar/UserAvatar";
 import AddImage from "../../../../static/icons/add-square.svg";
 import styles from "./CreateEmployee.scss";
 import ProfileEdit from "Containers/ProfileEdit/ProfileEdit";

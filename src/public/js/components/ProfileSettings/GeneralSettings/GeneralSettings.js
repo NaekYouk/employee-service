@@ -7,14 +7,14 @@ import styles from "./GeneralSettings.scss";
 
 class GeneralSettings extends React.Component {
   state = {
-    isImageEditModeOn: false
-  }
+    isImageEditModeOn: false,
+  };
 
   toggleProfileImageEditor = () => {
     this.setState({
-      isImageEditModeOn: !this.state.isImageEditModeOn
+      isImageEditModeOn: !this.state.isImageEditModeOn,
     });
-  }
+  };
 
   render = () => {
     const { userName, userId, userJoinDate, image, changeUserProfile } = this.props;
@@ -23,14 +23,12 @@ class GeneralSettings extends React.Component {
     return (
       <div className={styles.container}>
         {isImageEditModeOn ? (
-          <Fragment>
+          <>
             <span onClick={this.toggleProfileImageEditor} className={styles.return_button}>
               <ArrowIcon />
             </span>
-            <ImageEditor
-              onSubmit={(image) => changeUserProfile(image)}
-            />
-          </Fragment>
+            <ImageEditor onSubmit={(image) => changeUserProfile(image)} />
+          </>
         ) : (
           <div className={styles.info_container}>
             <p className={styles.caption}>Your account</p>
@@ -47,21 +45,23 @@ class GeneralSettings extends React.Component {
                 </span>
               </div>
               <div className={styles.user_info_row}>
-                <span className={styles.label}>Name</span> <span className={styles.value}>{userName}</span>
+                <span className={styles.label}>Name</span>{" "}
+                <span className={styles.value}>{userName}</span>
               </div>
               <div className={styles.user_info_row}>
-                <span className={styles.label}>Personal id</span> <span className={styles.value}>{userId}</span>
+                <span className={styles.label}>Personal id</span>{" "}
+                <span className={styles.value}>{userId}</span>
               </div>
               <div className={styles.user_info_row}>
-                <span className={styles.label}>Join date</span> <span className={styles.value}>{formatDateTime(userJoinDate)}</span>
+                <span className={styles.label}>Join date</span>{" "}
+                <span className={styles.value}>{formatDateTime(userJoinDate)}</span>
               </div>
             </div>
           </div>
         )}
       </div>
     );
-  }
+  };
 }
 
 export default GeneralSettings;
-

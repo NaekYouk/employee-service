@@ -12,8 +12,8 @@ const EmployeePage = ({
   isLoading,
   employee,
   role,
-  image,
   showModal,
+  changeUserProfileImage,
 }) => {
   useEffect(() => {
     const employeeId = match.params.id;
@@ -37,6 +37,7 @@ const EmployeePage = ({
         role={role}
         sex={employee.sex}
         showModal={showModal}
+        changeUserProfileImage={changeUserProfileImage}
         surname={employee.surname}
       />
       <RightSection

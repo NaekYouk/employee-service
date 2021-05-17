@@ -5,17 +5,38 @@ import styles from "./LeftSection.scss";
 import Button from "Components/Shared/Button/Button";
 import ProfileEdit from "Containers/ProfileEdit/ProfileEdit";
 import { isUserAdmin } from "Utils/user-helpers/user-helpers";
+import ImageEditor from "Components/ProfileSettings/GeneralSettings/ImageEditor/ImageEditor";
 
-const LeftSection = ({ id, showModal, name, surname, sex, role, image }) => {
+const LeftSection = ({
+  id,
+  showModal,
+  name,
+  surname,
+  sex,
+  role,
+  image,
+  changeUserProfileImage,
+}) => {
   const handleEditClick = () => {
     showModal({
       bodyContent: <ProfileEdit userId={id} />,
     });
   };
 
+  const onEditClick = () => {
+    showModal({
+      bodyContent: <ImageEditor onSubmit={(image) => changeUserProfileImage(id, image)} />,
+    });
+  };
+
   return (
     <div className={styles.left_section}>
       <div className={styles.left_section__img_wrapper}>
+        {isUserAdmin(role) && (
+          <a className={styles.edit_link} onClick={onEditClick}>
+            Edit
+          </a>
+        )}
         <img className={styles.left_section__img} src={image} />
       </div>
       <Title className={styles.left_section__title_sex}>-{sex}-</Title>
