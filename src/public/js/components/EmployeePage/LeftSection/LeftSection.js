@@ -37,7 +37,7 @@ const LeftSection = ({
             Edit
           </a>
         )}
-        <img className={styles.left_section__img} src={image} />
+        <img className={styles.left_section__img} src={image || "https://place-hold.it/150"} />
       </div>
       <Title className={styles.left_section__title_sex}>-{sex}-</Title>
       <Title className={styles.left_section__title}>{name}</Title>
