@@ -126,7 +126,7 @@ export default class ImageUploader extends React.Component {
               onClick={(e) => this.onSumbitButtonClick(e, onSubmit)}
               type={BUTTON_TYPES.DEFAULT_SOLID}
             >
-              Submit
+              Загрузить
             </Button>
           </div>
         </div>

@@ -7,8 +7,8 @@ import styles from "./ProfileSettings.scss";
 const MENU_CONFIG = [
   {
     key: "general",
-    label: "General",
-    header: "General settings",
+    label: "Основное",
+    header: "Основная информация",
     component: GeneralSettings,
   },
 ];
@@ -35,7 +35,7 @@ class ProfileSettings extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.menu_container}>
-          <p className={styles.menu_header}>Menu</p>
+          <p className={styles.menu_header}>Меню</p>
           <ul className={styles.menu}>
             {MENU_CONFIG.map((item) => (
               <li

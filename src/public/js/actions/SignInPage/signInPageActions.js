@@ -19,10 +19,10 @@ import { employeeCreate, signInPath } from "Utils/path-helpers/signInPagePaths";
 import { deleteSessionData, setSessionData } from "Utils/storage-helpers/storage-helpers";
 
 const ERRORS = {
-  WRONG_NAME: "Username or password is incorrect",
-  USER_EXISTS: "User with such name or email already exists",
-  UNKNOWN: "We don't really know what has happened. Try again later",
-  SESSION_EXPIRED: "Current session has expired",
+  WRONG_NAME: "Неверное имя пользователя или пароль",
+  USER_EXISTS: "Пользователь с таким именем или электронной почтой уже существует",
+  UNKNOWN: "Мы действительно не знаем, что произошло. Повторите попытку позже",
+  SESSION_EXPIRED: "Срок действия текущей сессии истек",
 };
 
 export const setSignInPageType = (data) => ({

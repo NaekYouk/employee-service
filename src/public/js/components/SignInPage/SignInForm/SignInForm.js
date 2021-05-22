@@ -39,7 +39,7 @@ class SignInForm extends React.Component {
   render() {
     return (
       <form onSubmit={(e) => this.onSubmit(e)} className={styles.right_column_content}>
-        <p className={styles.title}>Sign In</p>
+        <p className={styles.title}>Авторизация</p>
         <Input
           isInvalid={this.state.isEmailInvalid}
           onChange={(value) => this.onEmailChange(value)}
@@ -62,7 +62,7 @@ class SignInForm extends React.Component {
             }}
             type={BUTTON_TYPES.DEFAULT_SOLID}
           >
-            Sign In
+            Войти
           </Button>
         </div>
       </form>

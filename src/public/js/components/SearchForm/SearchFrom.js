@@ -10,9 +10,9 @@ const SearchForm = ({ history }) => {
   return (
     <div className={styles.searchForm}>
       <div className={styles.right_column_content}>
-        <p className={styles.title}>Search</p>
+        <p className={styles.title}>Поиск</p>
         <Input
-          placeholder={"John Doe"}
+          placeholder={"Введите имя или фамилию"}
           value={searchString}
           onChange={(inputValue) => setSearchString(inputValue)}
           isFocusedByDefault
@@ -31,7 +31,7 @@ const SearchForm = ({ history }) => {
               })
             }
           >
-            Search
+            Поиск
           </Button>
         </div>
       </div>

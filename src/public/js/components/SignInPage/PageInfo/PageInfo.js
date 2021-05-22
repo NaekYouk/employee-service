@@ -7,6 +7,8 @@ const INFO_TYPES = {
   DEFAULT: "default"
 };
 
+const EMAIL = 'vladislavustinovich1999@gmail.com';
+
 const PageInfo = (props) => {
   const { type, title, message } = props;
 
@@ -16,9 +18,9 @@ const PageInfo = (props) => {
       <div className={styles.message_details}>{message}</div>
       <div className={styles.support_link}>
         {type === INFO_TYPES.ERROR
-          ? "If you are still experiencing this issue"
-          : "If you have any questions"}
-        , please contact our <a>support team</a>
+          ? "Если вы все еще испытываете эту проблему"
+          : "Если у вас есть любые вопросы"}
+        , пожалуйста обратитесь в нашу <a href={`mailto:${EMAIL}`}>Тех. поддержку</a>
       </div>
     </div>
   );

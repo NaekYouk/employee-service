@@ -31,10 +31,10 @@ class GeneralSettings extends React.Component {
           </>
         ) : (
           <div className={styles.info_container}>
-            <p className={styles.caption}>Your account</p>
+            <p className={styles.caption}>Ваш аккаунт</p>
             <div className={styles.user_info_wrapper}>
               <div className={styles.user_info_row}>
-                <span className={styles.label}>Avatar</span>
+                <span className={styles.label}>Фотокарточка</span>
                 <span className={styles.value}>
                   <UserAvatar
                     imageSrc={image}
@@ -45,15 +45,15 @@ class GeneralSettings extends React.Component {
                 </span>
               </div>
               <div className={styles.user_info_row}>
-                <span className={styles.label}>Name</span>{" "}
+                <span className={styles.label}>Имя</span>{" "}
                 <span className={styles.value}>{userName}</span>
               </div>
               <div className={styles.user_info_row}>
-                <span className={styles.label}>Personal id</span>{" "}
+                <span className={styles.label}>Персональный id</span>{" "}
                 <span className={styles.value}>{userId}</span>
               </div>
               <div className={styles.user_info_row}>
-                <span className={styles.label}>Join date</span>{" "}
+                <span className={styles.label}>Дата создания профиля</span>{" "}
                 <span className={styles.value}>{formatDateTime(userJoinDate)}</span>
               </div>
             </div>

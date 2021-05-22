@@ -10,30 +10,30 @@ import styles from "./RightSection.scss";
 const RightSection = ({ department, email, mobile, room }) => {
   return (
     <div className={styles.right_section}>
-      <SectionTitle title={"General Info"}>
+      <SectionTitle title={"Основная информация"}>
         <ul>
           <li>
             <DepartmentIcon />
-            <p className={styles.right_section__row_name}>Department</p>
+            <p className={styles.right_section__row_name}>Подразделение</p>
             <p>{department}</p>
           </li>
           <li>
             <RoomIcon />
-            <p className={styles.right_section__row_name}>Room</p>
+            <p className={styles.right_section__row_name}>Номер кабинета</p>
             <p>{room}</p>
           </li>
         </ul>
       </SectionTitle>
-      <SectionTitle title={"Contacts"}>
+      <SectionTitle title={"Контакты"}>
         <ul>
           <li>
             <PhoneIcon />
-            <p className={styles.right_section__row_name}>Mobile phone</p>
+            <p className={styles.right_section__row_name}>Моб.телефон</p>
             <a href={`tel:${mobile}`}>{mobile}</a>
           </li>
           <li>
             <EmailIcon />
-            <p className={styles.right_section__row_name}>Email</p>
+            <p className={styles.right_section__row_name}>Почта</p>
             <a href={`mailto:${email}`}>{email}</a>
           </li>
         </ul>

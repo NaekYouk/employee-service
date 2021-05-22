@@ -12,48 +12,48 @@ import { isEmpty } from "Utils/object-helpers/object-helpers";
 const FIELDS_CONFIG = [
   {
     key: "name",
-    label: "name",
+    label: "имя",
   },
   {
     key: "surname",
-    label: "surname",
+    label: "фамилия",
   },
   {
     key: "patronymic",
-    label: "patronymic",
+    label: "отчество",
   },
   {
     key: "sex",
-    label: "sex",
+    label: "пол",
     type: "select",
     options: [
-      { value: "mr", label: "MR" },
-      { value: "ms", label: "MS" },
+      { value: "mr", label: "Муж" },
+      { value: "ms", label: "Жен" },
     ],
   },
   {
     key: "department",
-    label: "department",
+    label: "подразделение",
   },
   {
     key: "room",
-    label: "room",
+    label: "номер кабинета",
   },
   {
     key: "mobile",
-    label: "mobile",
+    label: "моб.телефон",
   },
   {
     key: "email",
-    label: "email",
+    label: "почта",
   },
   {
     key: "role",
-    label: "role",
+    label: "Права",
     type: "select",
     options: [
-      { value: "admin", label: "Admin" },
-      { value: "default", label: "Default" },
+      { value: "admin", label: "Администратор" },
+      { value: "default", label: "Стандартные" },
     ],
   },
 ];
@@ -89,7 +89,7 @@ const ProfileEdit = ({
 
   return (
     <div className={styles.profile_edit}>
-      <MenuItemHeader>{isCreateMode ? "Create profile" : "Edit profile"}</MenuItemHeader>
+      <MenuItemHeader>{isCreateMode ? "Создать профиль" : "Редактировать профиль"}</MenuItemHeader>
       <ul className={styles.profile_edit__list}>
         {FIELDS_CONFIG.map((item) => (
           <li key={item.key} className={styles.profile_edit__list_item}>
@@ -98,6 +98,7 @@ const ProfileEdit = ({
                 <Title className={styles.profile_edit__list_item_title}>{item.label}</Title>
                 <div className={styles.profile_edit__select}>
                   <Select
+                    placeholder={'Выбрать...'}
                     value={item.options.find((option) => option.value === userInfo[item.key])}
                     onChange={(inputValue) => myChangeHandler(item.key, inputValue.value)}
                     options={item.options}
@@ -110,7 +111,7 @@ const ProfileEdit = ({
                 <Input
                   key={item.key}
                   value={userInfo[item.key]}
-                  placeholder={`input ${item.label}...`}
+                  placeholder={`Введите ${item.label}...`}
                   type={INPUT_TYPES.DEFAULT}
                   onChange={(inputValue) => myChangeHandler(item.key, inputValue)}
                 />
@@ -125,7 +126,7 @@ const ProfileEdit = ({
           additionalClassNames={styles.profile_edit__button}
           onClick={onRemoveButtonClick}
         >
-          Remove profile
+          Удалить профиль
         </Button>
       )}
       <Button
@@ -134,7 +135,7 @@ const ProfileEdit = ({
         isDisabled={isButtonDisabled}
         onClick={onSaveButtonClick}
       >
-        {isCreateMode ? "Create profile" : "Save edits"}
+        {isCreateMode ? "Создать профиль" : "Сохранить профиль"}
       </Button>
     </div>
   );

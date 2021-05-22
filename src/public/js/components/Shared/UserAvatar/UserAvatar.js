@@ -19,7 +19,7 @@ const UserAvatar = ({ color, imageSrc, withoutBorder, isEditable, onEditClick })
   return (
     <div className={styles.container}>
       {isEditable && <a className={styles.edit_link} onClick={onEditClick}>
-        Edit
+        Изм.
       </a>}
       {isEditable && <div className={styles.shadow}/>}
       <div className={className}>

@@ -7,7 +7,7 @@ import styles from "./SignInPopup.scss";
 
 class SignInPopup extends React.Component {
   state = {
-    showSettings: false
+    showSettings: false,
   };
 
   handleClick = (isSignInPage = true) => {
@@ -25,7 +25,7 @@ class SignInPopup extends React.Component {
   handleSettingsClick = () => {
     const { userId, showModal } = this.props;
     showModal({
-      bodyContent: <ProfileSettings userId={userId} />
+      bodyContent: <ProfileSettings userId={userId} />,
     });
   };
 
@@ -35,14 +35,11 @@ class SignInPopup extends React.Component {
     if (isUserAuthorized) {
       return (
         <div className={styles.signInPopup_container}>
-          <a
-            onClick={this.handleSettingsClick}
-            className={styles.signInPopup_button}
-          >
-            Settings
+          <a onClick={this.handleSettingsClick} className={styles.signInPopup_button}>
+            Настройки
           </a>
           <a onClick={() => this.handleSignOutClick()} className={styles.signInPopup_button}>
-            Sign out
+            Выйти
           </a>
         </div>
       );
@@ -58,14 +55,7 @@ class SignInPopup extends React.Component {
           className={styles.signInPopup_button}
           to={pathToSignInPage()}
         >
-          Sign In
-        </Link>
-        <Link
-          onClick={() => this.handleClick(false)}
-          className={styles.signInPopup_button}
-          to={pathToSignInPage()}
-        >
-          Sign Up
+          Войти
         </Link>
       </div>
     );

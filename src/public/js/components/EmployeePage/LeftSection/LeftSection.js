@@ -34,7 +34,7 @@ const LeftSection = ({
       <div className={styles.left_section__img_wrapper}>
         {isUserAdmin(role) && (
           <a className={styles.edit_link} onClick={onEditClick}>
-            Edit
+            Изм.
           </a>
         )}
         <img className={styles.left_section__img} src={image || "https://place-hold.it/150"} />
@@ -44,7 +44,7 @@ const LeftSection = ({
       <Title className={styles.left_section__title}>{surname}</Title>
       {isUserAdmin(role) && (
         <Button additionalClassNames={styles.left_section__button} onClick={handleEditClick}>
-          Edit Profile
+          Изм.Профиль
         </Button>
       )}
     </div>

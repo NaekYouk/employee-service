@@ -10,7 +10,7 @@ const SignInPage = (props) => {
     return (
       <>
         <div className={styles.top_buttons}>
-          <button className={styles.switch_button}>"Sign In"</button>
+          <button className={styles.switch_button}>"Авторизация"</button>
         </div>
         <SignInForm onSubmit={authorizeUser} />
       </>
@@ -23,10 +23,10 @@ const SignInPage = (props) => {
     const { error } = props;
 
     if (error) {
-      return "Oh no, something went wrong :(";
+      return "О нет, что-то пошло не так :(";
     }
 
-    return <span>Welcome!</span>;
+    return <span>Добро пожаловать!</span>;
   };
 
   const getPageInfoMessage = () => {
@@ -37,8 +37,8 @@ const SignInPage = (props) => {
     }
 
     return userName
-      ? "Wish to switch to another account? Go ahead!"
-      : "We hope you remember your password.";
+      ? "Хотите перейти на другую учетную запись? Вперед!"
+      : "Мы надеемся, что вы помните свой пароль.";
   };
 
   const { isLoading, error } = props;

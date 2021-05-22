@@ -99,7 +99,7 @@ export default class ArticleViewer extends React.Component {
                 onClick={() => this.onCommentSubmitButtonClick(commentBody, onSubmitButtonClick)}
                 type={BUTTON_TYPES.DEFAULT_SOLID}
               >
-                Submit
+                Загрузить
               </Button>
             </div>
           </Fragment>

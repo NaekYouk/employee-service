@@ -92,7 +92,7 @@ class SignUpForm extends React.Component {
             }}
             type={BUTTON_TYPES.DEFAULT_SOLID}
           >
-            Submit
+            Загрузить
           </Button>
         </div>
         <p className={styles.tip_policy}>

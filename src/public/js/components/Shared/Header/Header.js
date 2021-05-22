@@ -9,7 +9,7 @@ import { isUserAdmin } from "Utils/user-helpers/user-helpers";
 
 const HEADER_CONFIG = [
   {
-    children: "Home",
+    children: "Главная",
     path: pathToMainPage(),
     isExact: true,
   },
