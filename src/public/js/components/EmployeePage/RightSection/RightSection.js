@@ -14,7 +14,7 @@ const RightSection = ({ department, email, mobile, room }) => {
         <ul>
           <li>
             <DepartmentIcon />
-            <p className={styles.right_section__row_name}>Подразделение</p>
+            <p className={styles.right_section__row_name}>Должность</p>
             <p>{department}</p>
           </li>
           <li>

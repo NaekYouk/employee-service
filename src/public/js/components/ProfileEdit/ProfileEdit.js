@@ -33,7 +33,7 @@ const FIELDS_CONFIG = [
   },
   {
     key: "department",
-    label: "подразделение",
+    label: "должность",
   },
   {
     key: "room",
