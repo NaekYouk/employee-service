@@ -6,7 +6,7 @@ import styles from "./Modal.scss";
 class Modal extends React.PureComponent {
   state = {
     isOpen: false,
-    containerAnimation: ""
+    containerAnimation: "",
   };
 
   componentDidMount() {
@@ -53,20 +53,24 @@ class Modal extends React.PureComponent {
     this.setState({
       isOpen: this.props.isOpen,
       containerAnimation: styles.fade_in_modal,
-      bodyAnimation: styles.fade_in_modal_children
+      bodyAnimation: styles.fade_in_modal_children,
     });
   };
 
   hideModal = (e) => {
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
+
     this.setState(
       {
         containerAnimation: styles.fade_out_modal,
-        bodyAnimation: styles.fade_out_modal_children
+        bodyAnimation: styles.fade_out_modal_children,
       },
       () => {
         setTimeout(() => {
           this.setState({
-            isOpen: this.props.isOpen
+            isOpen: this.props.isOpen,
           });
         }, 700);
       }
@@ -102,7 +106,7 @@ const mapStateToProps = ({ ModalState }, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   closeModal: () => {
     dispatch(closeModal());
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps, null)(Modal);

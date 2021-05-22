@@ -96,9 +96,9 @@ export const createEmployeeProfile = (data, history) => (dispatch) => {
       dispatch(
         showModal({
           bodyContent: <AuthorizeInfoPage login={res.data.email} password={res.data.password} />,
+          onClose: () => history.push(pathToEmployeePage(createdEmployeeId)),
         })
       );
-      history.push(pathToEmployeePage(createdEmployeeId));
     })
     .catch(() => {
       dispatch(fetchEmployeePageDataError());

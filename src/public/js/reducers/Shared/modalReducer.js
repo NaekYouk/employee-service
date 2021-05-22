@@ -3,28 +3,28 @@ export const CLOSE_MODAL = "Components/Shared/CLOSE_MODAL";
 
 const initialState = {
   isOpen: false,
-  bodyContent: null
+  bodyContent: null,
+  onCLose: null,
 };
 
 const ModalState = (state = initialState, { data, type } = {}) => {
   switch (type) {
-
     case SHOW_MODAL:
       return {
         ...state,
         bodyContent: data ? data.bodyContent : initialState.bodyContent,
-        isOpen: true
+        isOpen: true,
+        onClose: data.onClose,
       };
 
     case CLOSE_MODAL:
       return {
         ...state,
-        isOpen: false
+        isOpen: false,
       };
 
     default:
       return state;
-
   }
 };
 

@@ -2,12 +2,18 @@
 
 $modal-width: 700px;
 $menu-width: 200px;
+$modal-height: 220px;
 
 .authorize_info_page {
   background-color: $color-white;
   border-radius: 2px;
   min-width: $modal-width;
   max-width: $modal-width;
+  min-height: $modal-height;
+
+  &__wrapper {
+    margin: 24px;
+  }
 
   &__label {
     font-family: Roboto-Bold, sans-serif;
