@@ -31,13 +31,14 @@ const EmployeePage = ({
   return (
     <div className={styles.employee_page__container}>
       <LeftSection
+        changeUserProfileImage={changeUserProfileImage}
         id={employee.id}
         image={employee.image}
         name={employee.name}
+        patronymic={employee.patronymic}
         role={role}
         sex={employee.sex}
         showModal={showModal}
-        changeUserProfileImage={changeUserProfileImage}
         surname={employee.surname}
       />
       <RightSection

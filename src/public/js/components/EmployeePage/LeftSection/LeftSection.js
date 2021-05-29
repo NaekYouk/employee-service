@@ -12,6 +12,7 @@ const LeftSection = ({
   showModal,
   name,
   surname,
+  patronymic,
   sex,
   role,
   image,
@@ -42,6 +43,7 @@ const LeftSection = ({
       <Title className={styles.left_section__title_sex}>-{sex}-</Title>
       <Title className={styles.left_section__title}>{name}</Title>
       <Title className={styles.left_section__title}>{surname}</Title>
+      <Title className={styles.left_section__title}>{patronymic}</Title>
       {isUserAdmin(role) && (
         <Button additionalClassNames={styles.left_section__button} onClick={handleEditClick}>
           Изм.Профиль
