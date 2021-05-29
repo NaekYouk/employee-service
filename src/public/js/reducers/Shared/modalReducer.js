@@ -4,7 +4,7 @@ export const CLOSE_MODAL = "Components/Shared/CLOSE_MODAL";
 const initialState = {
   isOpen: false,
   bodyContent: null,
-  onCLose: null,
+  onClose: null,
 };
 
 const ModalState = (state = initialState, { data, type } = {}) => {
