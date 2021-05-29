@@ -49,7 +49,7 @@ const Header = ({ role }) => {
         <div className={styles.header_container}>
           <a href={"/"} className={`${styles.header_logo}`}>
             <img className={styles.header_logo_icon} src={MainLogo} />
-            <div className={styles.header_logo_name}>Employee Service</div>
+            <div className={styles.header_logo_name}>Environmental Employee Service</div>
           </a>
           <div className={styles.navBar_wrapper}>
             <nav>
