@@ -12,7 +12,7 @@ import {
   pathToSignInPage,
 } from "Utils/path-helpers/routerPaths";
 import { getSessionData } from "Utils/storage-helpers/storage-helpers";
-import { setUserDataFromLocalStorage } from "Actions/SignInPage/signInPageActions";
+import { setUserDataFromLocalStorage } from "Actions/Account/accountActions";
 import AllPages from "Containers/AllPages/AllPages";
 
 export const PATHS = {

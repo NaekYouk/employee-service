@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { signIn, createUser, setSignInPageType } from "../../actions/SignInPage/signInPageActions";
+import { signIn, createUser, setSignInPageType } from "../../actions/Account/accountActions";
 import { redirectTo } from "../../actions/Shared/historyActions";
 import SignInPage from "../../components/SignInPage/SignInPage";
 

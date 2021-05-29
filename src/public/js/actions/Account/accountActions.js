@@ -11,7 +11,7 @@ import {
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
   SET_USER_DATA_FROM_LOCAL_STORAGE,
-} from "Reducers/SignInPage/signInPageReducer";
+} from "Reducers/AccountState/accountReducer";
 import { getErrorStatus } from "Utils/error-helpers/error-helpers";
 import { pathToMainPage } from "Utils/path-helpers/routerPaths";
 import { redirectTo } from "Actions/Shared/historyActions";

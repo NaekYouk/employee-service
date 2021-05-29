@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { closeModal, showModal } from "../../actions/Shared/modalActions";
-import { setSignInPageType, signOut } from "../../actions/SignInPage/signInPageActions";
+import { setSignInPageType, signOut } from "../../actions/Account/accountActions";
 import SignInPopup from "../../components/SignInPage/SignInPopup/SignInPopup";
 
 const mapStateToProps = ({ AccountState }) => {
