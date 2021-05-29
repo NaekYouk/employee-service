@@ -1,10 +1,20 @@
+@import "~Styles/mixins.scss";
+
 .employee_page {
   &__container {
     padding: 20px;
-    margin: 120px 30px;
     display: flex;
     background-color: #ffffff;
     flex-wrap: wrap;
     gap: 25px;
+
+    @include media-mixin(
+      (
+        margin: (
+          all: 120px 30px,
+          md: 0,
+        ),
+      )
+    );
   }
 }
