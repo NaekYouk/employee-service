@@ -1,14 +1,23 @@
 @import "~Styles/colors.scss";
+@import "~Styles/mixins.scss";
 
 .page_message {
-  font-size: 25px;
+  @include font-size-mixin(25px);
   font-family: Raleway-Thin, sans-serif;
   letter-spacing: 2px;
   font-weight: bold;
 
+  @include media-mixin(
+    (
+      min-width: (
+        500: none,
+      ),
+    )
+  );
+
   .message_details {
     padding-top: 20px;
-    font-size: 16px;
+    @include font-size-mixin(16px);
     letter-spacing: 3px;
     font-family: Roboto-thin, sans-serif;
   }
@@ -21,10 +30,20 @@
       margin-bottom: 20px;
     }
 
-    padding-top: 40px;
+    @include font-size-mixin(16px);
+
+    @include media-mixin(
+      (
+        padding-top: (
+          all: 40px,
+          900: 20px,
+          sm: 10px,
+        ),
+      )
+    );
+
     color: $color-lightGray;
     width: 80%;
-    font-size: 16px;
     letter-spacing: 2px;
     font-family: Roboto-Thin, sans-serif;
     line-height: 22px;

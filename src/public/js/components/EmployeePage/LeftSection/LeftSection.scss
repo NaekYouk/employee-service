@@ -1,9 +1,21 @@
 @import "~Styles/colors.scss";
+@import "~Styles/mixins.scss";
 
 .left_section {
   text-align: center;
-  padding: 40px;
+  padding: 40px 40px 0;
   border-right: 1px solid #bbbbbb;
+
+  @include media-mixin(
+    (
+      border-right: (
+        md: none,
+      ),
+      flex: (
+        md: 1,
+      ),
+    )
+  );
 
   &__img {
     height: 100%;
@@ -17,6 +29,7 @@
       width: 150px;
       height: 150px;
       overflow: hidden;
+      margin: 0 auto;
 
       &:hover {
         .edit_link {
@@ -30,7 +43,8 @@
     transition: 0.5s;
     opacity: 0;
     color: $color-white;
-    font-size: 35px;
+    //font-size: 35px;
+    @include font-size-mixin(35px);
     font-weight: 600;
     background-color: $color-black;
     border-radius: 50%;

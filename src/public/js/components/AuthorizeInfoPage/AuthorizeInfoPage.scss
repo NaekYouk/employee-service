@@ -1,21 +1,16 @@
 @import "~Styles/colors.scss";
-
-$modal-width: 700px;
-$menu-width: 200px;
-$modal-height: 220px;
+@import "~Styles/mixins.scss";
 
 .authorize_info_page {
   background-color: $color-white;
   border-radius: 2px;
-  min-width: $modal-width;
-  max-width: $modal-width;
-  min-height: $modal-height;
 
   &__wrapper {
-    margin: 24px;
+    margin: 0 24px;
   }
 
   &__label {
+    @include font-size-mixin(24px);
     font-family: Roboto-Bold, sans-serif;
     overflow-wrap: break-word;
   }

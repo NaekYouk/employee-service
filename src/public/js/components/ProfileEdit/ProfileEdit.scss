@@ -1,14 +1,11 @@
 @import "~Styles/colors.scss";
+@import "~Styles/mixins.scss";
 
-$modal-width: 900px;
 $modal-height: 700px;
-$menu-width: 200px;
 
 .profile_edit {
   background-color: $color-white;
   border-radius: 2px;
-  min-width: $modal-width;
-  max-width: $modal-width;
   min-height: $modal-height;
 
   .display_section {
@@ -23,6 +20,14 @@ $menu-width: 200px;
     &_item {
       margin: 15px 0;
       display: flex;
+
+      @include media-mixin(
+        (
+          flex-wrap: (
+            md: wrap,
+          ),
+        )
+      );
 
       &_title {
         align-self: flex-end;

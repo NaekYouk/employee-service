@@ -1,6 +1,17 @@
+@import "~Styles/mixins.scss";
+
 .right_section {
-  width: 100%;
-  margin: 0 40px 50px;
+  flex: 1;
+  margin-bottom: 50px;
+
+  @include media-mixin(
+    (
+      min-width: (
+        md: 420px,
+        500: auto,
+      ),
+    )
+  );
 
   svg {
     stroke: #bbbbbb;
@@ -15,10 +26,18 @@
 
     a {
       text-decoration: none;
+      @include font-size-mixin(20px);
     }
   }
 
+  p {
+    @include font-size-mixin(20px);
+  }
+
   .right_section__row_name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     width: 35%;
     font-weight: 600;
   }

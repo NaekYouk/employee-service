@@ -9,11 +9,13 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    overflow-y: auto;
   }
 
   &_body {
     opacity: 0;
+    width: 100%;
+    margin: auto 20%;
   }
 }
 
@@ -23,13 +25,12 @@
   background: white;
 }
 
-
 .fade_in_modal {
   @extend .fade_in_modal;
 }
 
 .fade_in_modal_children {
-  @extend .fade_in_modal_children
+  @extend .fade_in_modal_children;
 }
 
 .fade_out_modal {
@@ -37,5 +38,5 @@
 }
 
 .fade_out_modal_children {
-  @extend .fade_out_modal_children
+  @extend .fade_out_modal_children;
 }

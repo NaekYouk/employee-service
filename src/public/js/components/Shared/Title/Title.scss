@@ -1,8 +1,10 @@
 @import "~Styles/colors.scss";
+@import "~Styles/mixins.scss";
 
 .title {
   font-family: Raleway-Light, sans-serif;
-  font-size: 20px;
+  @include font-size-mixin(20px);
+  //font-size: 20px;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 1.5px;

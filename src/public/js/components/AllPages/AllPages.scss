@@ -8,6 +8,7 @@
   background: $color-black url('~Images/background.png') no-repeat;
   background-size: cover;
   font-family: Raleway-Light, sans-serif;
+  overflow-y: auto;
 
   .page {
     position: absolute;

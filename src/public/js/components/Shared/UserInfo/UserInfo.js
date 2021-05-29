@@ -7,7 +7,7 @@ import styles from "./UserInfo.scss";
 class UserInfo extends React.PureComponent {
   showSignInModal = () =>
     this.props.showModal({
-      bodyContent: <SignInPopup />
+      bodyContent: <SignInPopup />,
     });
 
   getUserSettings = () => {
@@ -18,20 +18,12 @@ class UserInfo extends React.PureComponent {
     );
   };
 
-  getLoginIcon = () => {
-    return (
-      <div className={styles.login_icon_wrapper} onClick={() => this.showSignInModal()}>
-        <LoginIcon className={styles.login_icon} />
-      </div>
-    );
-  };
-
   render = () => {
     const { isUserAuthorized } = this.props;
     if (isUserAuthorized) {
       return this.getUserSettings();
     }
-    return this.getLoginIcon();
+    return null;
   };
 }
 

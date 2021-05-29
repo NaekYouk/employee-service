@@ -6,7 +6,6 @@ import Input, { INPUT_TYPES } from "Components/Shared/Input/Input";
 import Title from "Components/Shared/Title/Title";
 import Button, { BUTTON_TYPES } from "Components/Shared/Button/Button";
 import { default as Select } from "react-select";
-import { pathToEmployeesPage } from "Utils/path-helpers/routerPaths";
 import { isEmpty } from "Utils/object-helpers/object-helpers";
 
 const FIELDS_CONFIG = [
