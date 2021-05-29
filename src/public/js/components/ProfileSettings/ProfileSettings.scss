@@ -1,18 +1,12 @@
 @import "~Styles/colors.scss";
 
-$modal-width: 700px;
-$menu-width: 200px;
-
 .container {
   background-color: $color-white;
   border-radius: 2px;
-  min-width: $modal-width;
-  max-width: $modal-width;
   min-height: 500px;
   display: flex;
 
   .menu_container {
-    width: $menu-width;
     background-color: $color-background-pressed;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -28,7 +22,7 @@ $menu-width: 200px;
       list-style-type: none;
 
       li {
-        padding: 20px 30px;
+        padding: 20px 10px;
         font-family: Raleway-Light, sans-serif;
         font-weight: bold;
         cursor: pointer;

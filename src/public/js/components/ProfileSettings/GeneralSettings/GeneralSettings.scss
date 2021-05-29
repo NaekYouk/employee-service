@@ -42,6 +42,7 @@
       .user_info_row {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         &:not(:last-child) {
           margin-bottom: 15px;
@@ -53,6 +54,7 @@
           font-size: 14px;
           color: $color-lightGray;
           padding-right: 20px;
+          width: 200px;
         }
 
         .value {

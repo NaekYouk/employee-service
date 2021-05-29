@@ -40,6 +40,14 @@
       letter-spacing: 1.5px;
       color: #202020;
       @include font-size-mixin(20px);
+
+      @include media-mixin(
+        (
+          display: (
+            sm: none,
+          ),
+        )
+      );
     }
   }
 }
