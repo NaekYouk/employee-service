@@ -34,11 +34,26 @@
     @include font-size-mixin(20px);
   }
 
-  .right_section__row_name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 35%;
-    font-weight: 600;
+  .right_section__row {
+    &_name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 35%;
+      font-weight: 600;
+    }
+
+    &_value {
+      @include media-mixin(
+        (
+          flex: (
+            md: 1,
+          ),
+          text-align: (
+            md: right,
+          ),
+        )
+      );
+    }
   }
 }

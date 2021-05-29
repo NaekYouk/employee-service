@@ -15,12 +15,12 @@ const RightSection = ({ department, email, mobile, room }) => {
           <li>
             <DepartmentIcon />
             <p className={styles.right_section__row_name}>Должность</p>
-            <p>{department}</p>
+            <p className={styles.right_section__row_value}>{department}</p>
           </li>
           <li>
             <RoomIcon />
             <p className={styles.right_section__row_name}>Номер кабинета</p>
-            <p>{room}</p>
+            <p className={styles.right_section__row_value}>{room}</p>
           </li>
         </ul>
       </SectionTitle>
@@ -29,12 +29,16 @@ const RightSection = ({ department, email, mobile, room }) => {
           <li>
             <PhoneIcon />
             <p className={styles.right_section__row_name}>Моб.телефон</p>
-            <a href={`tel:${mobile}`}>{mobile}</a>
+            <a href={`tel:${mobile}`} className={styles.right_section__row_value}>
+              {mobile}
+            </a>
           </li>
           <li>
             <EmailIcon />
             <p className={styles.right_section__row_name}>Почта</p>
-            <a href={`mailto:${email}`}>{email}</a>
+            <a href={`mailto:${email}`} className={styles.right_section__row_value}>
+              {email}
+            </a>
           </li>
         </ul>
       </SectionTitle>
